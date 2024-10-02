@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom global styles */
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif; /* Change to your preferred font */
+}
+
+h2 {
+  color: #1a202c; /* Dark gray */
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 1rem;
+}
