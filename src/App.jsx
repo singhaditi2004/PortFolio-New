@@ -9,6 +9,7 @@ import Skills from "./components/Skills";
 import Internship from "./components/Internship";
 import Certificates from "./components/Certificates";
 import Contact from "./components/Contact";
+import Resume from "./components/Resume"
 import "./index.css";
 import "./App.css";
 function App() {
@@ -25,6 +26,7 @@ function App() {
             <Route path="/internship" element={<Internship />} />
             <Route path="/certificates" element={<Certificates />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/resume" element={<Resume />} />
           </Routes>
         </AnimatePresence>
       </div>
