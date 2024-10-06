@@ -1,51 +1,41 @@
 import React from "react";
 import { motion } from "framer-motion";
-import "../App.css";
-import photo from "../assets/view.png";
-import download from "../assets/download.png";
+import { useState } from "react";
 const Resume = () => {
+  const [isPreviewOpen, setIsPreviewOpen] = useState(false);
+  const driveFileId = "10Leh9zdFTRqwBVKIKqDEVcBQGQ4LUn7D"; // Replace with your actual file ID
+  const driveLink = `https://drive.google.com/uc?id=${driveFileId}&export=download`; // Link for direct download
+
+  const handleOpenDriveLink = () => {
+    window.open(`https://drive.google.com/file/d/${driveFileId}/view`, "_top");
+  };
+
+
+
   return (
-    <>
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        exit={{ opacity: 0, y: -20 }}
-        transition={{ duration: 0.5 }}
-        className="container mx-auto px-4 py-8"
-      >
-        <motion.h1
-          initial={{ opacity: 0, x: -50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ delay: 0.2, duration: 0.8 }}
-          className="text-5xl font-bold mb-4 mt-14"
+    <div className="container mx-auto px-4 py-8">
+      <h1 className="text-3xl font-bold mb-6">My Resume</h1>
+      <div className="flex space-x-4 mb-8">
+        <motion.button
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+          className="bg-teal-500 hover:bg-teal-600 text-white font-bold py-2 px-4 rounded"
+          onClick={handleOpenDriveLink}
         >
-          Resume
-        </motion.h1>
-        <div className="btn-container">
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.5, duration: 0.8 }}
-            className="text-lg"
+          Preview Resume
+        </motion.button>
+        <a href={driveLink} target="_blank" rel="noopener noreferrer">
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded"
           >
-            <button type="button" className="btn jhk ">
-              Preview <img src={photo} className="photo" alt="Resume Photo" />
-            </button>
-          </motion.p>
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.8, duration: 0.8 }}
-            className="text-lg mt-4"
-          >
-            <button type="button" className="btn side ">
-              Download{" "}
-              <img src={download} className="photo" alt="Resume Photo" />
-            </button>
-          </motion.p>
-        </div>
-      </motion.div>
-    </>
+            Download Resume
+          </motion.button>
+        </a>
+      </div>
+      
+    </div>
   );
 };
 

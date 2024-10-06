@@ -9,26 +9,36 @@ import Skills from "./components/Skills";
 import Internship from "./components/Internship";
 import Certificates from "./components/Certificates";
 import Contact from "./components/Contact";
-import Resume from "./components/Resume"
+import Resume from "./components/Resume";
+import Footer from "./components/Footer";
 import "./index.css";
 import "./App.css";
+
 function App() {
   return (
     <Router>
-      <div className="App">
+      <div className="flex flex-col min-h-screen">
+        {/* Navbar (Header) */}
         <Navbar />
-        <AnimatePresence mode="wait">
-          <Routes>
-            <Route path="/" element={<Introduction />} />
-            <Route path="/education" element={<Education />} />
-            <Route path="/projects" element={<Projects />} />
-            <Route path="/skills" element={<Skills />} />
-            <Route path="/internship" element={<Internship />} />
-            <Route path="/certificates" element={<Certificates />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/resume" element={<Resume />} />
-          </Routes>
-        </AnimatePresence>
+
+        {/* Main content (This grows to fill the space) */}
+        <div className="flex-grow">
+          <AnimatePresence mode="wait">
+            <Routes>
+              <Route path="/" element={<Introduction />} />
+              <Route path="/Education" element={<Education />} />
+              <Route path="/Projects" element={<Projects />} />
+              <Route path="/Skills" element={<Skills />} />
+              <Route path="/Internship" element={<Internship />} />
+              <Route path="/Certificates" element={<Certificates />} />
+              <Route path="/Contact" element={<Contact />} />
+              <Route path="/Resume" element={<Resume />} />
+            </Routes>
+          </AnimatePresence>
+        </div>
+
+        {/* Footer (sticks to bottom) */}
+        <Footer />
       </div>
     </Router>
   );
