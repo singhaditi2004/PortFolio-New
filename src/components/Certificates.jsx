@@ -4,22 +4,33 @@ import { motion } from "framer-motion";
 const Certificates = () => {
   const certificates = [
     {
-      name: "AWS Certified Developer",
-      issuer: "Amazon Web Services",
-      date: "January 2024",
+      name: "Career Essentials in Software Development by Microsoft and LinkedIn",
+      issuer: "LinkedIn",
+      date: "June 2024",
     },
     {
-      name: "Certified Java Developer",
-      issuer: "Oracle",
-      date: "June 2023",
+      name: "Programming Foundations: Beyond the Fundamentals",
+      issuer: "LinkedIn",
+      date: "June 2024",
     },
     {
-      name: "Android Developer Certification",
-      issuer: "Google",
-      date: "September 2022",
+      name: "Basics of java",
+      issuer: "Coding Ninjas",
+      date: "May 2024",
     },
+    {
+      name: "Python Zero to Hero",
+      issuer: "Guvi",
+      date: "September 2024",
+    },
+    {
+      name: "Learn SQL",
+      issuer: "CodeChef",
+      date: "September 2023",
+    },
+    
   ];
-
+  //hon Zero to Hero
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -27,7 +38,7 @@ const Certificates = () => {
       exit={{ opacity: 0 }}
       className="container mx-auto px-4 py-8"
     >
-      <h2 className="text-4xl font-bold mb-8 text-center text-gray-800">
+      <h2 className="text-4xl font-bold mb-8 text-center mt-10 text-gray-800">
         Certificates
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

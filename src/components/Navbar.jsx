@@ -3,7 +3,8 @@ import { Link, NavLink } from "react-router-dom"; // Importing Link and NavLink 
 import { motion } from "framer-motion";
 import openMenu from "../assets/menu.png";
 import closeMenu from "../assets/cross.png";
-
+import logoimg from "../assets/logo.png";
+import logosvg from "../assets/Feeling Passionate.svg";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -19,7 +20,7 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="bg-gray-800 text-white">
+    <nav className="bg text-white">
       <style>{`
         .nav-link {
           position: relative;
@@ -50,10 +51,19 @@ const Navbar = () => {
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
         }
+          .bg{
+            background-color: #001244;
+          }
       `}</style>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          <Link to="/" className="text-xl font-bold logo">
+          <Link to="/" className="flex items-center text-xl font-bold logo">
+            <img
+              src={logoimg}
+              alt="Logo"
+              style={{ width: "100px", height: "63px" }}
+              className="mr-2"
+            />
             Aditi Singh Bais
           </Link>
           <div className="-mr-2 flex md:hidden">
