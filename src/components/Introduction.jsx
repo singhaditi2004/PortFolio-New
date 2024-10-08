@@ -1,9 +1,43 @@
 import React from "react";
 import { motion } from "framer-motion";
-
+import profile from "../assets/logo.png";
+import TypewriterText from "./type";
 const Introduction = () => {
   return (
     <>
+      <style>
+        {`
+  .div1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #001244; /* Outer border color */
+    height: 300px;
+    width: 300px;
+    border-radius: 50%; /* Makes it a circle */
+    padding: 10px; /* Space between outer and inner circles */
+  }
+
+  .div2 {
+    height: 280px;
+    width: 280px;
+    border-radius: 50%; /* Inner circle */
+    overflow: hidden;
+    background-color: #4FD1C5; /* Inner border color */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .img {
+    height: 95%; /* Adjusted for centering inside */
+    width: 95%;
+    background-color: orange;
+    display: block;
+    border-radius: 50%; /* Makes the image circular */
+  }
+    `}
+      </style>
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -11,19 +45,29 @@ const Introduction = () => {
         transition={{ duration: 0.5 }}
         className="container mx-auto px-4 py-8"
       >
-        <motion.h1
-          initial={{ opacity: 0, x: -50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ delay: 0.2, duration: 0.8 }}
-          className="text-4xl font-bold mb-4"
-        >
-          Hi, I&apos;m Aditi Singh Bais
-        </motion.h1>
+        <TypewriterText />
+
+        <center>
+          <motion.div
+            className="div1 mb-10"
+            initial={{ scale: 0.5, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 0.5 }}
+          >
+            <motion.div
+              className="div2"
+              whileHover={{ scale: 1.1 }} // Scale up on hover
+              transition={{ type: "spring", stiffness: 300 }}
+            >
+              <img className="img" src={profile} />
+            </motion.div>
+          </motion.div>
+        </center>
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.5, duration: 0.8 }}
-          className="text-lg"
+          className="text-lg "
         >
           A passionate <strong>Software Developer</strong> with a keen interest
           in Android development and cloud technologies. Currently in my final

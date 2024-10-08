@@ -1,8 +1,38 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Twitter, Linkedin, Github, Globe } from "lucide-react"; // Replaced Medium with Globe
-import { useState } from "react";
 const Contact = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const response = await fetch("https://formspree.io/f/xvgopdje", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    });
+
+    if (response.ok) {
+      alert("Message sent!");
+      setFormData({ name: "", email: "", message: "" }); // Reset form data
+    } else {
+      alert("There was a problem sending your message.");
+    }
+  };
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -33,9 +63,10 @@ const Contact = () => {
           </label>
           <input
             type="text"
+            id="name"
+            name="name"
             value={formData.name}
             onChange={handleChange}
-            id="name"
             className="w-full p-2  bord border rounded"
           />
         </div>
@@ -48,6 +79,7 @@ const Contact = () => {
             value={formData.email}
             onChange={handleChange}
             id="email"
+            name="email"
             className="w-full p-2 border bord rounded"
           />
         </div>
@@ -57,6 +89,7 @@ const Contact = () => {
           </label>
           <textarea
             id="message"
+            name="message"
             value={formData.message}
             onChange={handleChange}
             rows="4"
