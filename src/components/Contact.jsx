@@ -113,7 +113,7 @@ const Contact = () => {
         className="mt-10 text-center"
       >
         <h3 className="text-2xl mt-24 font-semibold mb-0">
-          Connect with me on Social Media
+          Connect with me on
         </h3>
 
         <div className="mt-8 flex justify-center space-x-6">
