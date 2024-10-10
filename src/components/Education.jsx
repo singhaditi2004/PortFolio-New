@@ -28,9 +28,17 @@ const Education = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className="container mx-auto px-4 py-16 bg-gray-100"
+      className="container mx-auto px-4 py-16 mt-10 bg-gray-100"
     >
-      <h2 className="text-4xl font-bold mb-12 text-center text-gray-800">
+      <style>{`
+          .cs{
+            color: #001244;
+          }
+            .nonsc{
+            background-color: #001244;
+            }
+      `}</style>
+      <h2 className="text-4xl font-bold mb-12 mt-12 text-center text-gray-800">
         Educational Journey
       </h2>
       <div className="relative">
@@ -46,13 +54,11 @@ const Education = () => {
               className="w-1/3 pr-8 text-right"
               whileHover={{ scale: 1.05 }}
             >
-              <h3 className="text-2xl font-semibold text-indigo-600">
-                {item.year}
-              </h3>
+              <h3 className="text-2xl font-semibold cs">{item.year}</h3>
             </motion.div>
             <div className="w-1/3 px-4">
-              <div className="w-4 h-4 bg-indigo-600 rounded-full mx-auto"></div>
-              <div className="w-1 h-full bg-indigo-600 mx-auto"></div>
+              <div className="w-4 h-4 nonsc rounded-full mx-auto"></div>
+              <div className="w-1 h-full nonsc mx-auto"></div>
             </div>
             <motion.div
               className="w-2/3 pl-8 bg-white shadow-lg rounded-lg p-6"
@@ -63,9 +69,7 @@ const Education = () => {
                 {item.degree}
               </h4>
               <p className="text-lg mb-2 text-gray-600">{item.institution}</p>
-              <p className="text-md font-semibold text-indigo-600">
-                Score: {item.score}
-              </p>
+              <p className="text-md font-semibold cs">Score: {item.score}</p>
             </motion.div>
           </motion.div>
         ))}
