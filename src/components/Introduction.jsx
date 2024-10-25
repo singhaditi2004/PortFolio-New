@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import profile from "../assets/logo.png";
+import profile from "../assets/me.jpeg";
 import TypewriterText from "./type";
 const Introduction = () => {
   return (
@@ -30,11 +30,11 @@ const Introduction = () => {
   }
 
   .img {
-    height: 95%; /* Adjusted for centering inside */
-    width: 95%;
+    height: 90%; /* Adjusted for centering inside */
+    width: 90%;
     background-color: orange;
     display: block;
-    border-radius: 50%; /* Makes the image circular */
+    border-radius: 80%; /* Makes the image circular */
   }
     `}
       </style>
